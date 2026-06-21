@@ -1,8 +1,9 @@
-provider "azurerm" {
-  features {}
+resource "azurerm_resource_group" "rg" {
+  name     = "poc-15-rg"
+  location = "East US"
 }
 
-resource "azurerm" {resource "azurerm_resource_group" "rg" {
+resource "azurerm_kubernetes_cluster" "aks" {
   name                = "aks-cluster-demo"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -18,7 +19,3 @@ resource "azurerm" {resource "azurerm_resource_group" "rg" {
     type = "SystemAssigned"
   }
 }
-  name     = "poc-15-rg"
-  location = "East US"
-}
-
