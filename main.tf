@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
   name     = "poc-15-rg"
-  location = "East US"
+  location = "centralindia"
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
